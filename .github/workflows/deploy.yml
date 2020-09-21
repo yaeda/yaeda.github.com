@@ -12,6 +12,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Checkout Blog Posts
+        uses: actions/checkout@v2
+        with:
+          repository: yaeda/blog-posts
+          path: blog-posts
+
+      - name: Create symbolic link
+        run: ln -s blog-posts/posts posts
+
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
