@@ -19,6 +19,12 @@ export function getSortedPostsData() {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
+    if (
+      typeof matterResult.data.date === "object" &&
+      typeof matterResult.data.date.toISOString === "function"
+    ) {
+      matterResult.data.date = matterResult.data.date.toISOString();
+    }
 
     // Combine the data with the id
     return {
@@ -53,6 +59,12 @@ export async function getPostData(id: string) {
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
+  if (
+    typeof matterResult.data.date === "object" &&
+    typeof matterResult.data.date.toISOString === "function"
+  ) {
+    matterResult.data.date = matterResult.data.date.toISOString();
+  }
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
