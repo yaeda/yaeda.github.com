@@ -29,8 +29,18 @@ img {
   display: block;
 }
 
+code {
+  padding: 0.2rem 0.4rem;
+  margin: 0;
+  font-size: 0.875rem;
+  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  background-color: rgba(45, 55, 72, 0.08);
+  border-radius: 0.3rem;
+  vertical-align: 0.0625rem;
+}
+
 pre {
-  background-color: #2d3748;
+  background-color: rgba(45, 55, 72, 1);
   font-size: 0.875rem;
   overflow: auto;
   border-radius: 0.3em;
@@ -45,10 +55,10 @@ pre {
 }
 
 pre code {
-  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   color: white;
   padding: 1rem;
   display: inline-block;
+  background-color: transparent;
 }
 
 hr {
