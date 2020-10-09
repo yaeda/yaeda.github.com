@@ -22,7 +22,9 @@ jobs:
           path: blog-posts
 
       - name: Create symbolic link
-        run: ln -s blog-posts/posts posts
+        run: |
+          ln -s $GITHUB_WORKSPACE/blog-posts/posts $GITHUB_WORKSPACE/posts
+          ln -s $GITHUB_WORKSPACE/blog-posts/images $GITHUB_WORKSPACE/public/images
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
