@@ -27,6 +27,9 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+  margin: 2rem auto;
+  box-shadow: 0 0 1px 0 gray;
+  border-radius: 0.1rem;
 }
 
 code {
