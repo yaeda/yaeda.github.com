@@ -5,6 +5,9 @@ import DateTime from "../../components/date-time";
 import utilStyles from "../../styles/utils.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { formatDistanceToNow, isBefore, parseISO, sub } from "date-fns";
+import unified from "unified";
+import parse from "remark-parse";
+import remark2react from "remark-react";
 
 export default function Post({
   postData,
@@ -12,7 +15,7 @@ export default function Post({
   postData: {
     title: string;
     date: string;
-    contentHtml: string;
+    content: string;
   };
 }) {
   const postedDate = parseISO(postData.date);
@@ -33,7 +36,13 @@ export default function Post({
             </span>
           ) : null}
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className="mdpreview">
+          {
+            // use remark to convert markdown into react
+            unified().use(parse).use(remark2react).processSync(postData.content)
+              .result
+          }
+        </div>
       </article>
     </Layout>
   );
