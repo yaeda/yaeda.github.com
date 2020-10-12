@@ -5,9 +5,8 @@ import DateTime from "../../components/date-time";
 import utilStyles from "../../styles/utils.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { formatDistanceToNow, isBefore, parseISO, sub } from "date-fns";
-import unified from "unified";
-import parse from "remark-parse";
-import remark2react from "remark-react";
+import ReactMarkdown from "react-markdown";
+import { CodeBlock } from "../../components/code-block";
 
 export default function Post({
   postData,
@@ -37,11 +36,10 @@ export default function Post({
           ) : null}
         </div>
         <div className="mdpreview">
-          {
-            // use remark to convert markdown into react
-            unified().use(parse).use(remark2react).processSync(postData.content)
-              .result
-          }
+          <ReactMarkdown
+            source={postData.content}
+            renderers={{ code: CodeBlock }}
+          />
         </div>
       </article>
     </Layout>
