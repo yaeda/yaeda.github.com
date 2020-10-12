@@ -7,6 +7,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { formatDistanceToNow, isBefore, parseISO, sub } from "date-fns";
 import ReactMarkdown from "react-markdown";
 import { CodeBlock } from "../../components/code-block";
+import { ImageBlock } from "../../components/image-block";
 
 export default function Post({
   postData,
@@ -38,7 +39,7 @@ export default function Post({
         <div className="mdpreview">
           <ReactMarkdown
             source={postData.content}
-            renderers={{ code: CodeBlock }}
+            renderers={{ code: CodeBlock, image: ImageBlock }}
           />
         </div>
       </article>
