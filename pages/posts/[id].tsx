@@ -5,6 +5,9 @@ import DateTime from "../../components/date-time";
 import utilStyles from "../../styles/utils.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { formatDistanceToNow, isBefore, parseISO, sub } from "date-fns";
+import ReactMarkdown from "react-markdown";
+import { CodeBlock } from "../../components/code-block";
+import { ImageBlock } from "../../components/image-block";
 
 export default function Post({
   postData,
@@ -12,7 +15,7 @@ export default function Post({
   postData: {
     title: string;
     date: string;
-    contentHtml: string;
+    content: string;
   };
 }) {
   const postedDate = parseISO(postData.date);
@@ -33,7 +36,12 @@ export default function Post({
             </span>
           ) : null}
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className="mdpreview">
+          <ReactMarkdown
+            source={postData.content}
+            renderers={{ code: CodeBlock, image: ImageBlock }}
+          />
+        </div>
       </article>
     </Layout>
   );

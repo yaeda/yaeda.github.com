@@ -1,0 +1,26 @@
+.figure {
+  margin: 2rem 0;
+  background-color: #2b2b2b;
+  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 0.875rem;
+  border-radius: 0.3rem;
+}
+
+.figure pre {
+  margin: 0;
+  border-radius: 0.3rem;
+  line-height: 1.5;
+}
+
+.figure pre code {
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.figcaption {
+  padding: 0.5rem 1rem;
+  margin: 0;
+  color: #f8f8f2;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  word-break: break-all;
+}
