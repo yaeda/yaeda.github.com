@@ -1,9 +1,13 @@
 .figure {
-  margin: 2rem 0;
+  margin: 2rem auto;
 }
 
 .figure img {
-  margin: 0;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 0.1rem;
+  box-shadow: 0 0 1px 0 gray;
 }
 
 .figcaption {
