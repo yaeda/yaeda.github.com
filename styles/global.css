@@ -21,20 +21,3 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-/* for markdown contents */
-
-code {
-  padding: 0.2rem 0.4rem;
-  margin: 0;
-  font-size: 0.875rem;
-  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  background-color: rgba(45, 55, 72, 0.08);
-  border-radius: 0.3rem;
-  vertical-align: 0.0625rem;
-}
-
-hr {
-  border-width: 0 0 2px;
-  margin: 3rem 0;
-}
