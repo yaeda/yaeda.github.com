@@ -10,6 +10,14 @@
   vertical-align: 0.0625rem;
 }
 
+.mdpreview blockquote {
+  border-left: 0.25rem solid #eee;
+  color: #666;
+  font-style: italic;
+  margin: 1rem;
+  padding-left: 1rem;
+}
+
 .mdpreview hr {
   border-width: 0 0 2px;
   margin: 3rem 0;
